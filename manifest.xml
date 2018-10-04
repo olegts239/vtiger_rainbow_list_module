@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    <type>extension</type>
+    <name>EERainbowList</name>
+    <label>EERainbowList</label>
+    <parent></parent>
+    <version>1.1</version>
+    <dependencies>
+        <vtiger_version>6.0.0rc</vtiger_version>
+        <vtiger_max_version>6.*</vtiger_max_version>
+    </dependencies>
+    <license>
+        <inline><![CDATA[Rainbow List by EntExt
+ Copyright (C) 2016 EntExt Ltd
+ All Rights Reserved.                                                             
+ Source code may not be redistributed unless expressly permitted by EntExt Ltd.
+ If you have any questions or comments, please email: support@entext.org]]>
+        </inline>
+    </license>
+    <tables>
+        <table>
+            <name>vtiger_ee_rainbowlist</name>
+            <sql><![CDATA[CREATE TABLE `vtiger_ee_rainbowlist` (
+				`rainbowlist_id` int(11) NOT NULL AUTO_INCREMENT,
+				`module_name` varchar(100) DEFAULT NULL,
+				`summary` varchar(400) NOT NULL,
+				`conditions` text,
+				`color` varchar(100) DEFAULT NULL,
+				PRIMARY KEY (`rainbowlist_id`),
+				UNIQUE KEY `vtiger_ee_rainbowlist_idx` (`rainbowlist_id`)
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8]]>
+            </sql>
+        </table>
+        <table>
+            <name>vtiger_ee_rainbowlist_seq</name>
+            <sql><![CDATA[CREATE TABLE `vtiger_ee_rainbowlist_seq` (
+				`id` int(11) NOT NULL
+				) ENGINE=InnoDB DEFAULT CHARSET=utf8]]>
+            </sql>
+        </table>
+    </tables>
+</module>
